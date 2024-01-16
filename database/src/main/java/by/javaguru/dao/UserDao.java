@@ -18,7 +18,7 @@ public class UserDao implements Dao<Integer, User> {
     @Override
     public User save(User entity) {
         @Cleanup var session = sessionFactory.openSession();
-        session.persist(entity);
+        session.save(entity);
         return entity;
     }
 
