@@ -15,13 +15,13 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "orders")
-public class Order {
+public class Order implements BaseEntity<Integer>{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
@@ -33,16 +33,17 @@ public class Order {
     )
     private List<Product> products;
 
-    @Column(name = "create_date")
+    @Column(name = "create_date", nullable = false)
     private LocalDateTime createDate;
 
-    @Column(name = "delivery_date")
+    @Column(name = "delivery_date", nullable = false)
     private LocalDateTime deliveryDate;
 
-    @Column(name = "address")
+    @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "status")
+    @Column(name = "status", nullable = false)
+    @Enumerated(EnumType.STRING)
     private OrderStatus status;
 }
 

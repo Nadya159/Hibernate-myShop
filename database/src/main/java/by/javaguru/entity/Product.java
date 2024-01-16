@@ -3,7 +3,6 @@ package by.javaguru.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -14,12 +13,12 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "product")
-public class Product implements Serializable {
+public class Product implements BaseEntity<Integer> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
     @Column(name = "price", nullable = false)
