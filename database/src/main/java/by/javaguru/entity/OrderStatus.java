@@ -1,5 +1,5 @@
 package by.javaguru.entity;
 
 public enum OrderStatus {
-    CLOSED, PROGRESS, CREATED
+    CLOSED, PROGRESS, CREATED, CANCELLED
 }

@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -26,12 +25,4 @@ public class Product implements BaseEntity<Integer> {
 
     @Column(name = "balance", nullable = false)
     private Integer balance;
-
-    @ManyToMany
-    @JoinTable(
-            name = "items",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "order_id")
-    )
-    private List<Order> orders;
 }

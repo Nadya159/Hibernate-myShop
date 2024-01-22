@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(exclude = {"user"})
+@ToString(exclude = {"user", "items"})
 @Builder
 @Entity
 @Table(name = "orders")
@@ -25,18 +25,14 @@ public class Order implements BaseEntity<Integer>{
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    @ManyToMany
-    @JoinTable(
-            name = "items",
-            joinColumns = @JoinColumn(name = "order_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private List<Product> products;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order", fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private List<Item> items;
 
     @Column(name = "create_date", nullable = false)
     private LocalDateTime createDate;
 
-    @Column(name = "delivery_date", nullable = false)
+    @Column(name = "delivery_date")
     private LocalDateTime deliveryDate;
 
     @Column(name = "address", nullable = false)
