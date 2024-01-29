@@ -18,7 +18,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <org.hibernate.version>6.4.1.Final</org.hibernate.version>    <!--5.5.6.Final-->
+    <org.hibernate.version>6.4.1.Final</org.hibernate.version>
     <org.mapstruct.version>1.5.4.Final</org.mapstruct.version>
   </properties>
 
@@ -45,12 +45,11 @@
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>42.7.1</version>
-      <!--<scope>runtime</scope>-->
     </dependency>
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
-      <version>6.0.0</version>      <!--was 5.0-->
+      <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.web</groupId>
@@ -59,7 +58,7 @@
     </dependency>
     <dependency>
       <groupId>jakarta.servlet.jsp.jstl</groupId>
-      <artifactId>jakarta.servlet.jsp.jstl-api</artifactId> <!--&lt;!&ndash;dmdev&ndash;&gt;-->
+      <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
       <version>3.0.0</version>
     </dependency>
     <dependency>
@@ -72,13 +71,6 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-reload4j</artifactId>
       <version>2.0.11</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>2.0.11</version>
-      <type>pom</type>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -105,7 +97,7 @@
     <dependency>
       <groupId>org.hibernate.orm</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>${org.hibernate.version}</version>              <!--рабочая версия-->
+      <version>${org.hibernate.version}</version>
     </dependency>
     <dependency>
       <groupId>org.hibernate.orm</groupId>
@@ -119,21 +111,6 @@
       <version>1.18.30</version>
       <scope>provided</scope>
     </dependency>
-    <!--<dependency>
-      <groupId>org.hibernate.orm</groupId>
-      <artifactId>hibernate-envers</artifactId>
-      <version>6.4.0.Final</version>
-    </dependency>
-    <dependency>
-      <groupId>org.hibernate.orm</groupId>
-      <artifactId>hibernate-jcache</artifactId>
-      <version>6.4.0.Final</version>
-    </dependency>
-    <dependency>
-      <groupId>org.ehcache</groupId>
-      <artifactId>ehcache</artifactId>
-      <version>3.9.7</version>                  &lt;!&ndash;рабочая версия&ndash;&gt;
-    </dependency>-->
     <dependency>
       <groupId>jakarta.xml.bind</groupId>
       <artifactId>jakarta.xml.bind-api</artifactId>
@@ -144,6 +121,41 @@
       <artifactId>jaxb-impl</artifactId>
       <version>4.0.4</version>
       <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>7.0.5.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.el</groupId>
+      <artifactId>jakarta.el-api</artifactId>
+      <version>4.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>jakarta.el</artifactId>
+      <version>4.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.expressly</groupId>
+      <artifactId>expressly</artifactId>
+      <version>5.0.0</version>                        <!--чтобы заработало в main Runner-->
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-el</artifactId>
+      <version>10.1.16</version>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.validation</groupId>
+      <artifactId>jakarta.validation-api</artifactId>
+      <version>3.0.0</version>  <!--was 3.0.2-->
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator-cdi</artifactId>
+      <version>7.0.5.Final</version>
     </dependency>
   </dependencies>
 
